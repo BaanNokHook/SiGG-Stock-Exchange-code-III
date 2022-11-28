@@ -9,5 +9,7 @@ namespace FinancialCurrency.API.Services
         ReemVm Withdraw(long userId, decimal amount);
         ReemVm GetAccountInfo(long userId);
         object GetBankInfo(long userId);
+        object ConvertToCurrency(long issuerName);
+        object Request(long banksId, decimal request);
     }
 }

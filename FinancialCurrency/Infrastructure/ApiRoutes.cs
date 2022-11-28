@@ -23,12 +23,19 @@ namespace FinancialCurrency.API.Infrastructure
 
         public static class Bank
         {
-            public const string BankInfo = Base + "/bank/{userId}";
-            public const string BankConvert = Base + "/bankconvert/{userId}";
-            public const string BankDeposit = Base + "/bankdeposit/{userId}/{amount}";
-            public const string BankWithdraw = Base + "/bankwithdraw/{userId}/{amount}";
-      
+            public const string BankInfo = Base + "/bankvalidateUKBankAccount/{banksId}";
+            public const string BankConvert = Base + "/bankSearchresult/{issuerName}";
+            public const string BankDeposit = Base + "/bankvalidateIbanAdvanced/{banksId}/{amount}";
+            public const string BankRequest = Base + "/bankvalidateDomesticAccount/{banksId}/{request}";
+            public const string BankWithdraw = Base + "/bankGiophyresult/{year}";
+    
         }
 
+        public static class Trade
+        {
+            public const string Openport = Base + "/trade";
+            public const string Brokers = Base + "/trades/{tradesId}";
+
+        }
     }
 }
