@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FinancialCurrency.API.Infrastructure;
@@ -12,46 +13,50 @@ namespace FinancialCurrency.API.Controllers.V1
     //[Route("api/[controller]")]
     [AllowAnonymous]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class BankController : ControllerBase
     {
-        private readonly IAccountService accountService;
+        private readonly IBankService BankService;
 
-        public AccountController(IAccountService accountService)
+        public BankController(IBankService BankService)
         {
             //this.config = config;
-            this.accountService = accountService;
+            this.BankService = BankService;
         }
 
-        [HttpGet(ApiRoutes.Account.AccountInfo)]
-        public IActionResult AccountInfo([FromRoute] long userId)
+        [HttpPost(ApiRoutes.Bank.BankInfo)]
+        public IActionResult BankInfo([FromRoute] long userId)
         {
-            var response = accountService.GetAccountInfo(userId);
+            var response = BankService.GetBankInfo(userId);
 
             return Ok(response);
         }
 
-        [HttpGet(ApiRoutes.Account.Deposit)]
+        [HttpPost(ApiRoutes.Bank.BankDeposit)]
         public IActionResult Deposit([FromRoute] long userId, decimal amount)
         {
-            var response = accountService.Deposit(userId, amount);
+            var response = BankService.Deposit(userId, amount);
 
             return Ok(response);
         }
 
-        [HttpGet(ApiRoutes.Account.Withdraw)]
+        [HttpGet(ApiRoutes.Bank.BankWithdraw)]
         public IActionResult Withdraw([FromRoute] long userId, decimal amount)
         {
-            var response = accountService.Withdraw(userId, amount);
+            var response = BankService.Withdraw(userId, amount);
 
             return Ok(response);
         }
 
-        [HttpGet(ApiRoutes.Account.Convert)]
+        [HttpGet(ApiRoutes.Bank.BankConvert)]
         public IActionResult ConvertToCurruncy([FromRoute] long userId, string targetCurrency)
         {
-            var response = accountService.ConvertToCurrency(userId, targetCurrency.ToUpper());
+            var response = BankService.ConvertToCurrency(userId, targetCurrency.ToUpper());
 
             return Ok(response);
         }
     }
 }
+
+
+
+

@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace FinancialCurrency.Infrastructure.Repositories
 {
-    public class AccountRepository : IAccountRepository
+    public class AccountRepository : IBankRepository
     {
-        private readonly IEnumerable<Account> _accounts;
+        private readonly IEnumerable<Bank> _accounts;
 
         public AccountRepository()
         {
             _accounts = AccountInit.GetAllAccounts();
         }
 
-        public Account GetById(int id)
+        public Bank GetById(int id)
         {
             return _accounts.SingleOrDefault(x => x.Id == id);
         }

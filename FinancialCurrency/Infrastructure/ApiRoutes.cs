@@ -21,5 +21,14 @@ namespace FinancialCurrency.API.Infrastructure
             public const string Withdraw = Base + "/withdraw/{userId}/{amount}";
         }
 
+        public static class Bank
+        {
+            public const string BankInfo = Base + "/bank/{userId}";
+            public const string BankConvert = Base + "/bankconvert/{userId}";
+            public const string BankDeposit = Base + "/bankdeposit/{userId}/{amount}";
+            public const string BankWithdraw = Base + "/bankwithdraw/{userId}/{amount}";
+      
+        }
+
     }
 }

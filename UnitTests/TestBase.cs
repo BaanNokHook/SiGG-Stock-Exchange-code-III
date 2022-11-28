@@ -23,10 +23,10 @@ namespace UnitTests
         protected IEnumerable<Currency> defaultOneAccountCurrency;
         protected IEnumerable<User> uniqueUsers;
         protected IEnumerable<User> dupeUsers;
-        protected IEnumerable<Account> uniqueAccounts;
-        protected IEnumerable<Account> dupeAccounts;
-        protected IEnumerable<AccountInfo> uniqueAccountInfoColl;
-        protected IEnumerable<AccountInfo> dupeAccountInfoColl;
+        protected IEnumerable<Bank> uniqueAccounts;
+        protected IEnumerable<Bank> dupeAccounts;
+        protected IEnumerable<BankInfo> uniqueAccountInfoColl;
+        protected IEnumerable<BankInfo> dupeAccountInfoColl;
         protected IValueObjectCollection<Money> uniqueMoneyColl;
         protected IValueObjectCollection<Money> dupeMoneyColl;
         protected IEnumerable<Money> basicTestMoneyList;
@@ -99,10 +99,10 @@ namespace UnitTests
                 : lower < num && num < upper;
         }
 
-        protected static void Assert_Currency_Convertion(Currency targetCurrency, Account result)
+        protected static void Assert_Currency_Convertion(Currency targetCurrency, Bank result)
         {
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(Account));
+            Assert.IsInstanceOfType(result, typeof(Bank));
             Assert.IsTrue(result.Balance.Amount != 0);
             Assert.IsTrue(result.Balance.SelectedCurrency == targetCurrency);
         }

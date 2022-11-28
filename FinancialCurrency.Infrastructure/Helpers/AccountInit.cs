@@ -11,12 +11,12 @@ namespace FinancialCurrency.Infrastructure.Helpers
         private static IEnumerable<Currency> defaultThreeAccountCurrencies = new List<Currency> { Currency.RUB, Currency.USD, Currency.EUR };
         private static IEnumerable<Currency> defaultOneAccountCurrency = new List<Currency> { Currency.IDR };
         
-        public static IEnumerable<Account> GetAllAccounts()
+        public static IEnumerable<Bank> GetAllAccounts()
         {
             return GetBaseAccounts();
         }
 
-        public static IEnumerable<Account> GetAllAccountsWithDuplicate()
+        public static IEnumerable<Bank> GetAllAccountsWithDuplicate()
         {
             var baseAccountList = GetBaseAccounts();
             var dupeAccountList = baseAccountList.Concat(GetBaseAccounts());
@@ -24,12 +24,12 @@ namespace FinancialCurrency.Infrastructure.Helpers
             return dupeAccountList;
         }
 
-        private static IEnumerable<Account> GetBaseAccounts()
+        private static IEnumerable<Bank> GetBaseAccounts()
         {
-            var accountList = new List<Account>();
-            accountList.Add(new Account(1000101, new Money(100, Currency.RUB), "Igor", defaultThreeAccountCurrencies));
-            accountList.Add(new Account(1000102, new Money(15000, Currency.RUB), "Petr", defaultThreeAccountCurrencies));
-            accountList.Add(new Account(1000103, new Money(300, Currency.IDR), "Yulia", defaultOneAccountCurrency));
+            var accountList = new List<Bank>();
+            //accountList.Add(new Account(1000101, new Money(100, Currency.RUB), "Igor", defaultThreeAccountCurrencies));
+            //accountList.Add(new Account(1000102, new Money(15000, Currency.RUB), "Petr", defaultThreeAccountCurrencies));
+            //accountList.Add(new Account(1000103, new Money(300, Currency.IDR), "Yulia", defaultOneAccountCurrency));
             return accountList;
         }
     }

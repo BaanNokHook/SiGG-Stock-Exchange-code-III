@@ -73,7 +73,7 @@ namespace FinancialCurrency.API.Services
             return new ResponseVm() { Amount = accountBalance, Currency = accountCurrency, Message = message };
         }
 
-        private IValueObjectCollection<Money> GetConvertedMoneyCollection(Account account)
+        private IValueObjectCollection<Money> GetConvertedMoneyCollection(Bank account)
         {
             var moneyCollection = new ValueObjectCollection<Money>();
             foreach (var targetCurrency in account.Currencies)

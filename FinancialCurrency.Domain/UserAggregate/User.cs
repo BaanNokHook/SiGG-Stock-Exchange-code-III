@@ -1,14 +1,16 @@
 ﻿using FinancialCurrency.Domain.Common;
-
+using System;
 
 namespace FinancialCurrency.Domain
 {
     public class User : Entity<User>, IAggregateRoot
-    {        
-        public string Name { get; private set; }
-        public Account Account { get; private set; }
+    {
+        public object Bank;
 
-        public User(long id, string name, Account account)
+        public string Name { get; private set; }
+        public Bank Account { get; private set; }
+
+        public User(long id, string name, Bank account)
         {
             base.Id = id;
             Name = name;
@@ -20,5 +22,7 @@ namespace FinancialCurrency.Domain
         {
             return $"{Id} {this.Name}";
         }
+
+        
     }
 }

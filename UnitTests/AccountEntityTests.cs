@@ -7,7 +7,7 @@ using System.Linq;
 namespace UnitTests
 {
     [TestClass]
-    public class AccountEntityTests : TestBase<Account>
+    public class AccountEntityTests : TestBase<Bank>
     {
         [TestInitialize]
         public void Setup()

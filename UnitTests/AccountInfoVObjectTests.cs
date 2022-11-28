@@ -8,7 +8,7 @@ using System.Text;
 namespace UnitTests
 {
     [TestClass]
-    public class AccountInfoVObjectTests : TestBase<AccountInfo>
+    public class AccountInfoVObjectTests : TestBase<BankInfo>
     {
         [TestInitialize]
         public void Setup()
@@ -29,7 +29,7 @@ namespace UnitTests
         [TestMethod]
         public void Is_AccountInfo_Immutable()
         {
-            Assert.IsTrue(TestBase<Money>.Is_Immutable(typeof(AccountInfo)));
+            Assert.IsTrue(TestBase<Money>.Is_Immutable(typeof(BankInfo)));
         }
     }
 }

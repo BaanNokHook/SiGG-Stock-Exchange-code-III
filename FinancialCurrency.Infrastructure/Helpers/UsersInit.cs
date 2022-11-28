@@ -24,8 +24,8 @@ namespace FinancialCurrency.Infrastructure.Helpers
         private static IEnumerable<User> GetBaseUsers()
         {
             return new List<User> {
-            new User(100104, "Viktor", new Account(1000101, new Money(10000, Currency.RUB), "Viktor", new List<Currency> { Currency.RUB, Currency.USD, Currency.EUR })),
-            new User(100105, "Elena", new Account(1000102, new Money(300000, Currency.IDR), "Elena", new List<Currency> { Currency.IDR }))
+            //new User(100104, "Viktor", new Account(1000101, new Money(10000, Currency.RUB), "Viktor", new List<Currency> { Currency.RUB, Currency.USD, Currency.EUR })),
+            //new User(100105, "Elena", new Account(1000102, new Money(300000, Currency.IDR), "Elena", new List<Currency> { Currency.IDR }))
         };
         }
     }
