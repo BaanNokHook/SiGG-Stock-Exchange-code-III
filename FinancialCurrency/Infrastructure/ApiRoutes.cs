@@ -1,6 +1,10 @@
-﻿using System;
+﻿using FinancialCurrency.API.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
 using System.Threading.Tasks;
 
 namespace FinancialCurrency.API.Infrastructure
@@ -31,6 +35,21 @@ namespace FinancialCurrency.API.Infrastructure
     
         }
 
+        public static class Beneficiaries
+        {
+            public const string Quater = Base + "/beneficiaries";
+            public const string Profile = Base + "/beneficiaries";
+            public const string Stream = Base + "/beneficiaries/{beneficiary_id}";
+            public const string Vapor = Base + "/beneficiaries/{beneficiary_id}/accounts";  
+            public const string Backlog = Base + "/beneficiaries/{beneficiary_id}/accounts/{account_id}";  
+            public const string Makedefault = Base + "/beneficiaries/{beneficiary_id}/accounts/{account_id}/make-default";  
+            public const string Compliance = Base + "/beneficiaries/{beneficiary_id}/compliance-firewall-calculation";
+            public const string Firewall = Base + "/beneficiaries/{beneficiary_id}/rerun-firewall"; 
+            public const string Wait = Base + "/beneficiaries/{beneficiary_id}/wait";
+            public const string LastBenefit = Base + "/beneficiary-accounts/{accountid}";
+        }
+
+
         public static class Trade
         {
             public const string Openport = Base + "/trade";
@@ -39,3 +58,4 @@ namespace FinancialCurrency.API.Infrastructure
         }
     }
 }
+
