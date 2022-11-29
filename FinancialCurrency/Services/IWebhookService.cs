@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinancialCurrency.API.Services
 {
-    public interface ICardsService
+    public interface IWebhookService
     {
 
         ResponseVm StateI(string ContentType);
@@ -21,21 +21,10 @@ namespace FinancialCurrency.API.Services
         ResponseVm StateXIII(string ContentType);
         ResponseVm StateXIV(string ContentType);
         ResponseVm StateXV(string ContentType);
-
-
-
         object PostStateI(string contentType, string accept, string authorization, string body);
+        object DeleteStateI(string accept, string authorization);
         object GetStateI(string accept, string authorization);
-        object GetStateII(string accept, string authorization, string card_token);
+        object GetStateII(string accept, string authorization);
         object PostStateIII(string contentType, string accept, string authorization, string body);
-        object GetStateIII(string accept, string authorization);
-        object GetStateIV(string accept, string authorization, string card_rule_1);
-        object PostStateV(string contentType, string accept, string authorization, string card_rule_1);
-        object GetStateVI(string accept, string authorization, string card_id);
-        object PutStateVI(string contentType, string accept, string authorization, string body, string card_id);
-        object PostStateVII(string contentType, string accept, string authorization, string card_id);
-        object GetStateVIII(string accept, string authorization, string card_id);
-        object PostStateIX(string contentType, string accept, string authorization, string card_id);
-        object GetStateX(string card_id);
     }
 }

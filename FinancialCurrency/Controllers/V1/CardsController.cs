@@ -86,5 +86,55 @@ namespace FinancialCurrency.API.Controllers.V1
 
             return Ok(response);
         }
+
+        [HttpGet(ApiRoutes.Cards.StateVI)]  
+        public IActionResult GetStateVI([FromRoute] string Accept, string Authorization, string card_id)
+        {
+            var response = CardsService.GetStateVI(Accept, Authorization, card_id);
+
+            return Ok(response);   
+        }
+
+        [HttpPut(ApiRoutes.Cards.StateVI)]  
+        public IActionResult PutStateVI([FromRoute] string ContentType, string Accept, string Authorization, string Body, string card_id)
+        {
+            var response = CardsService.PutStateVI(ContentType, Accept, Authorization, Body, card_id);
+
+            return Ok(response);
+        }
+
+        [HttpPost(ApiRoutes.Cards.StateVII)]
+        public IActionResult PostStateVII([FromRoute] string ContentType, string Accept, string Authorization, string card_id)
+        {
+            var response = CardsService.PostStateVII(ContentType, Accept, Authorization, card_id);
+
+            return Ok(response);   
+        }
+
+        [HttpGet(ApiRoutes.Cards.StateVIII)]
+        public IActionResult GetStateVIII([FromRoute] string Accept, string Authorization, string card_id)
+        {
+            var response = CardsService.GetStateVIII(Accept, Authorization, card_id);
+
+            return Ok(response);  
+        }
+
+        [HttpPost(ApiRoutes.Cards.StateIX)]
+        public IActionResult PostStateIX([FromRoute] string ContentType, string Accept, string Authorization, string card_id)
+        {
+            var response = CardsService.PostStateIX(ContentType, Accept, Authorization, card_id);
+
+            return Ok(response);
+        }
+
+        [HttpGet(ApiRoutes.Cards.StateX)]   
+        public IActionResult GetStateX([FromRoute] string card_id)
+        {
+            var response = CardsService.GetStateX(card_id);
+
+            return Ok(response);
+        }
+
+
     }
 }

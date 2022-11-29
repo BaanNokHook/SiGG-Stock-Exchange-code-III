@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinancialCurrency.API.Services
 {
-    public interface ICardsService
+    public interface IDirectDebitService
     {
-
         ResponseVm StateI(string ContentType);
         ResponseVm StateII(string ContentType);
         ResponseVm StateIII(string ContentType);
@@ -21,21 +20,21 @@ namespace FinancialCurrency.API.Services
         ResponseVm StateXIII(string ContentType);
         ResponseVm StateXIV(string ContentType);
         ResponseVm StateXV(string ContentType);
-
-
+        ResponseVm StateXVI(string ContentType);
+        ResponseVm StateXVII(string ContentType);
+        ResponseVm StateXVIII(string ContentType);
+        ResponseVm StateXIX(string ContentType);
+        ResponseVm StateXX(string ContentType);
 
         object PostStateI(string contentType, string accept, string authorization, string body);
         object GetStateI(string accept, string authorization);
-        object GetStateII(string accept, string authorization, string card_token);
-        object PostStateIII(string contentType, string accept, string authorization, string body);
-        object GetStateIII(string accept, string authorization);
-        object GetStateIV(string accept, string authorization, string card_rule_1);
-        object PostStateV(string contentType, string accept, string authorization, string card_rule_1);
-        object GetStateVI(string accept, string authorization, string card_id);
-        object PutStateVI(string contentType, string accept, string authorization, string body, string card_id);
-        object PostStateVII(string contentType, string accept, string authorization, string card_id);
-        object GetStateVIII(string accept, string authorization, string card_id);
-        object PostStateIX(string contentType, string accept, string authorization, string card_id);
-        object GetStateX(string card_id);
+        object GetStateII(string accept, string authorization, string mandate_id);
+        object PostStateIII(string contentType, string accept, string authorization, string mandate_id);
+        object PostStateIV(string contentType, string accept, string authorization, string mandate_id);
+        object GetStateIV(string accept, string authorization);
+        object GetStateV(string accept, string authorization, string payment_id);
+       
     }
 }
+
+
