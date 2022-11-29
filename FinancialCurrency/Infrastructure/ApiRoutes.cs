@@ -50,6 +50,26 @@ namespace FinancialCurrency.API.Infrastructure
         }
 
 
+        public static class Cards
+        {
+            public const string StateI = Base + "/cards";
+            public const string StateII = Base + "/cards/by-token/{card_token}";
+            public const string StateIII = Base + "/cards/rules";
+            public const string StateIV = Base + "/cards/rules/{card_rule_1}";
+            public const string StateV = Base + "/cards/rules/{card_rule_1}/disable";
+            public const string StateVI = Base + "/cards/{card_id}";
+            public const string StateVII = Base + "/cards";
+            public const string StateVIII = Base + "/cards";
+            public const string StateIX = Base + "/cards";
+            public const string StateX = Base + "/cards";
+            public const string StateXI = Base + "/cards";
+            public const string StateXII = Base + "/cards";
+            public const string StateXIII = Base + "/cards";
+            public const string StateXIV = Base + "/cards";
+            public const string StateXV = Base + "/cards";
+            public const string StateXVI = Base + "/cards";
+
+        }
         public static class Trade
         {
             public const string Openport = Base + "/trade";
