@@ -17,10 +17,6 @@ namespace FinancialCurrency.API.Services
             ResponseVm LastBenefit(long Accept, long Authorization, string beneficiary_id);
 
 
-
-
-
-
         object Profile(long accept);
             object Quater(Func<long, IActionResult> accept);
             object ContentType(long contentType, long accept, long authorization, long body);
@@ -33,9 +29,9 @@ namespace FinancialCurrency.API.Services
             object PutBacklog(long contentType, long accept, long authorization, string beneficiary_id);
             object PutMakedefault(long contentType, long accept, long authorization, string beneficiary_id, string account_id);
             object GetCompliance(long accept, long authorization, string beneficiary_id);
-        object PostFirewall(long accept, long authorization, string beneficiary_id);
-        object GetWait(long accept, long authorization, string beneficiary_id);
-        object GetLastBenefit(long accept, long authorization, string account_id);
+            object PostFirewall(long accept, long authorization, string beneficiary_id);
+            object GetWait(long accept, long authorization, string beneficiary_id);
+            object GetLastBenefit(long accept, long authorization, string account_id);
     }
     
 }
