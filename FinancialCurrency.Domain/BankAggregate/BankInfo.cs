@@ -34,7 +34,7 @@ namespace FinancialCurrency.Domain
             for (int i = 0; i < array.Length; i++)
             {
                 var money = array[i];
-                if (money.SelectedCurrency == Balance.SelectedCurrency)//не ковертируем в одинаковые валюты - перенести проверку в аккаунт
+                if (money.SelectedCurrency == Balance.SelectedCurrency)//do not convert to the same currencies - transfer the check to the account
                 {
                     continue;
                 }

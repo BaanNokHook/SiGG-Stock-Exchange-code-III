@@ -27,7 +27,7 @@ namespace FinancialCurrency.API.Services
         {
             if (fromCurr == LeadCurrency && toCurr == LeadCurrency)
             {
-                throw new ArgumentException("Не могу получить курс обмена валюты с Евро на Евро");
+                throw new ArgumentException("I can not get the exchange rate from Euro to Euro");
             }
             try
             {

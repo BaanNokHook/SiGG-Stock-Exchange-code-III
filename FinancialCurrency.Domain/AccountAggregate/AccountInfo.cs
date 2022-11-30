@@ -18,14 +18,14 @@ namespace FinancialCurrency.Domain
 
         public override string ToString()
         {
-            var sb = new StringBuilder($"Основной баланс кошелька: {this.Balance.ToString()}.");
-            sb.Append($" Баланс кошелька в других валютах:");
+            var sb = new StringBuilder($"Main wallet balance: {this.Balance.ToString()}.");
+            sb.Append($" Wallet balance in other currencies:");
             var array = OtherCurrencies.ToArray();
 
             for (int i = 0; i < array.Length; i++)
             {
                 var money = array[i];
-                if (money.SelectedCurrency == Balance.SelectedCurrency)//не ковертируем в одинаковые валюты - перенести проверку в аккаунт
+                if (money.SelectedCurrency == Balance.SelectedCurrency)//do not convert to the same currencies - transfer the check to the account
                 {
                     continue;
                 }
