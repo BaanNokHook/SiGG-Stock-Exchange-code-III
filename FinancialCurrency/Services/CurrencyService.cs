@@ -90,5 +90,30 @@ namespace FinancialCurrency.API.Services
                 return default(decimal);
             }
         }
+
+        public object GetConversionAmount(Currency selectedCurrency, object targetCurrency, decimal amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        ConversionAmount ICurrencyService.GetConversionAmount(Currency fromCurr, Currency toCurr, decimal amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        object ICurrencyService.GetConversionAmount(Currency selectedCurrency, object targetCurrency, decimal amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        object ICurrencyService.GetConversionAmount(object selectedCurrency, object targetCurrency, object amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        ConversionExchangeRate ICurrencyService.GetConversionExchangeRate(Currency fromCurr, Currency toCurr)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

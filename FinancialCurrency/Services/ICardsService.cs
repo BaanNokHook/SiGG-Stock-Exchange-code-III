@@ -6,16 +6,16 @@ namespace FinancialCurrency.API.Services
     public interface ICardsService
     {
 
-        ResponseVm StateI(string ContentType);
-        ResponseVm StateII(string ContentType);
-        ResponseVm StateIII(string ContentType);
-        ResponseVm StateIV(string ContentType);
-        ResponseVm StateV(string ContentType);
-        ResponseVm StateVI(string ContentType);
-        ResponseVm StateVII(string ContentType);
-        ResponseVm StateVIII(string ContentType);
-        ResponseVm StateIX(string ContentType);
-        ResponseVm StateX(string ContentType);
+        ResponseVm StateI(string contentType, string accept, string authorization, string body);
+        ResponseVm StateII(string accept, string authorization);
+        ResponseVm StateIII(string contentType, string accept, string authorization, string body);
+        ResponseVm StateIV(string accept, string authorization, string card_rule_1);
+        ResponseVm StateV(string contentType, string accept, string authorization, string card_rule_1);
+        ResponseVm StateVI(string accept, string authorization, string card_id);
+        ResponseVm StateVII(string contentType, string accept, string authorization, string card_id);
+        ResponseVm StateVIII(string contentType, string accept, string authorization, string card_id);
+        ResponseVm StateIX(string contentType, string accept, string authorization, string card_id);
+        ResponseVm StateX(string card_id);
         ResponseVm StateXI(string ContentType);
         ResponseVm StateXII(string ContentType);
         ResponseVm StateXIII(string ContentType);

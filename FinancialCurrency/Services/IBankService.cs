@@ -13,3 +13,5 @@ namespace FinancialCurrency.API.Services
         object Request(long banksId, decimal request);
     }
 }
+
+

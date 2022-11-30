@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinancialCurrency.API.ViewModels;
+using FinancialCurrency.Domain;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace FinancialCurrency.API.Services
 {
@@ -10,3 +13,6 @@ namespace FinancialCurrency.API.Services
         }
     }
 }
+
+
+

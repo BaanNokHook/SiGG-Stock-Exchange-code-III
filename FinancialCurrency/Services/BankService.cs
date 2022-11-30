@@ -18,7 +18,7 @@ namespace FinancialCurrency.API.Services
             this.currencyService = currencyService ?? throw new ArgumentNullException(nameof(currencyService)); ;
         }
 
-        public ResponseVm BankConvertToCurrency(long userId, string targetCurrencyStr)
+        public ReemVm BankConvertToCurrency(long userId, string targetCurrencyStr)
         {
             
             var user = userService.GetById(userId);
@@ -34,10 +34,10 @@ namespace FinancialCurrency.API.Services
 
             var responseMsg = $"Currency conversion from c {fromCurrency} в {targetCurrency.ToString()}. Balance: {user.Account.Balance.ToString()}.";
 
-            return CreateResponseVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
+            return CreateReemVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
         }
 
-        public ResponseVm BankDeposit(long userId, decimal amount)
+        public ReemVm BankDeposit(long userId, decimal amount)
         {
 
             var user = userService.GetById(userId);
@@ -45,32 +45,32 @@ namespace FinancialCurrency.API.Services
 
             var responseMsg = $"Wallet topped up on: {amount} {user.Account.Balance.SelectedCurrency}. Balance: {user.Account.Balance.ToString()}.";
 
-            return CreateResponseVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
+            return CreateReemVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
         }
 
-        public ResponseVm GetBankInfo(long userId)
+        public ReemVm GetBankInfo(long userId)
         {
            
             var user = userService.GetById(userId);
             var moneyCollection = GetBankConvertedMoneyCollection(user.Account);
             var responseMsg = new BankInfo(user.Account.Balance, moneyCollection).ToString();
 
-            return CreateResponseVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
+            return CreateReemVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
         }
 
-        public ResponseVm BankWithdraw(long userId, decimal amount)
+        public ReemVm BankWithdraw(long userId, decimal amount)
         {
      
             var user = userService.GetById(userId);
             user.Account.BankWithdraw(new Money(amount, user.Account.Balance.SelectedCurrency));
             var responseMsg = $"BankWithdrawing money for: {amount} {user.Account.Balance.SelectedCurrency}. Balance: {user.Account.Balance.ToString()}.";
 
-            return CreateResponseVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
+            return CreateReemVm(user.Account.Balance.Amount, user.Account.Balance.SelectedCurrency, responseMsg);
         }
 
-        private ResponseVm CreateResponseVm(decimal accountBalance, Currency accountCurrency, string message)
+        private ReemVm CreateReemVm(decimal accountBalance, Currency accountCurrency, string message)
         {
-            return new ResponseVm() { Amount = accountBalance, Currency = accountCurrency, Message = message };
+            return new ReemVm() { Amount = accountBalance, Currency = accountCurrency, Message = message };
         }
 
         private IValueObjectCollection<Money> GetBankConvertedMoneyCollection(Bank account)
@@ -88,5 +88,43 @@ namespace FinancialCurrency.API.Services
             }
             return moneyCollection;           
         }
+
+        public ReemVm ConvertToCurrency(long userId, string currTo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ReemVm Deposit(long userId, decimal amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ReemVm Withdraw(long userId, decimal amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ReemVm GetAccountInfo(long userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        object IBankService.GetBankInfo(long userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ConvertToCurrency(long issuerName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Request(long banksId, decimal request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+
+
+   

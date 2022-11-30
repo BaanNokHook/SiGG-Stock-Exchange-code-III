@@ -4,6 +4,8 @@ namespace FinancialCurrency.Domain
 {
     public sealed class ConversionAmount : ValueObject<ConversionAmount>
     {
+        public decimal BankConvertedAmountValue;
+
         public Currency CurrencyFrom { get; }
         public Currency CurrencyTo { get; }
         public decimal ConvertedAmountValue { get; }

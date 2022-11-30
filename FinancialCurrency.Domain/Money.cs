@@ -5,14 +5,30 @@ namespace FinancialCurrency.Domain
 {
     public sealed class Money : ValueObject<Money>
     {
+        private Func<long, long, long, long, object> contentType;
+        private object selectedCurrency;
+
         public Money(decimal amount, Currency currency)
         {
             this.Amount = amount;
             this.SelectedCurrency = currency;
         }
 
+        public Money(Func<long, long, long, long, object> contentType, object selectedCurrency)
+        {
+            this.contentType = contentType;
+            this.selectedCurrency = selectedCurrency;
+        }
+
+        public Money(string contentType1, object selectedCurrency)
+        {
+            ContentType = contentType1;
+            this.selectedCurrency = selectedCurrency;
+        }
+
         public decimal Amount { get; }
         public Currency SelectedCurrency { get; }
+        public string ContentType { get; }
 
         public static Money operator -(Money a, Money b)
         {

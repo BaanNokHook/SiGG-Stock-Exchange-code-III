@@ -17,5 +17,15 @@ namespace FinancialCurrency.API.Services
         {
             return userRepository.GetById(id);
         }
+
+        public object GetById(string beneficiary_id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetById(Func<long, long, long, long, object> contentType)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

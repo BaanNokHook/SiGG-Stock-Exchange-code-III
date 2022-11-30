@@ -5,7 +5,7 @@ using System;
 namespace FinancialCurrency.API.Services
 {
         public interface IBeneficiariesService
-        {
+    {
             ResponseVm Quater(long ContentType);
             ResponseVm Profile(long Accept, decimal amount);
             ResponseVm Stream(long Authorization, decimal amount);
@@ -17,7 +17,7 @@ namespace FinancialCurrency.API.Services
             ResponseVm LastBenefit(long Accept, long Authorization, string beneficiary_id);
 
 
-        object Profile(long accept);
+            object Profile(long accept);
             object Quater(Func<long, IActionResult> accept);
             object ContentType(long contentType, long accept, long authorization, long body);
             object Profile(long contentType, long accept, long authorization, long body);
@@ -32,9 +32,13 @@ namespace FinancialCurrency.API.Services
             object PostFirewall(long accept, long authorization, string beneficiary_id);
             object GetWait(long accept, long authorization, string beneficiary_id);
             object GetLastBenefit(long accept, long authorization, string account_id);
+            object GetSession(long userId);
     }
     
 }
+
+
+
 
 
 

@@ -7,10 +7,19 @@ namespace FinancialCurrency.Domain
 {
     public class BankInfo : ValueObject<BankInfo>
     {
+        private Money balance;
+        private object moneyCollection;
+
         public BankInfo(Money balance, IValueObjectCollection<Money> otherCurrencies)
         {
             Balance = balance;
             OtherCurrencies = otherCurrencies;
+        }
+
+        public BankInfo(Money balance, object moneyCollection)
+        {
+            this.balance = balance;
+            this.moneyCollection = moneyCollection;
         }
 
         public Money Balance { get; }

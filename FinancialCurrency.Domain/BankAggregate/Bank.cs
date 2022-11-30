@@ -78,5 +78,24 @@ namespace FinancialCurrency.Domain
             return true;
         }
 
+        public void BankConvertToCurrency(Currency targetCurrency, ConversionAmount conversionAmount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BankDeposit(Money money)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BankWithdraw(Money money)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Makedefault(Money money)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
