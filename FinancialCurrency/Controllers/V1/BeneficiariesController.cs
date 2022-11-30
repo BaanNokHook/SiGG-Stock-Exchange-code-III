@@ -3,7 +3,8 @@ using FinancialCurrency.API.Services;
 using FinancialCurrency.API.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+using System;
+using System.Linq;
 
 namespace FinancialCurrency.API.Controllers.V1
 {
@@ -13,6 +14,8 @@ namespace FinancialCurrency.API.Controllers.V1
     public class BeneficiariesController : ControllerBase
     {
         private readonly IBeneficiariesService BeneficiariesService;
+        private object DateTime;
+        private object Summaries;
 
         public BeneficiariesController(IBeneficiariesService BeneficiariesService)
         {
@@ -128,5 +131,11 @@ namespace FinancialCurrency.API.Controllers.V1
         }
     }
 
+    internal class GetAlreadyRegisterController
+    {
+        public object Date { get; set; }
+        public object TemperatureC { get; set; }
+        public object Summary { get; set; }
+    }
 }
 
